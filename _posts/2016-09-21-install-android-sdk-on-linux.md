@@ -6,6 +6,8 @@ description: 主要用于服务器搭建Android环境，用于CI/CD
 keywords: Android
 ---
 
+主要用于服务器搭建Android环境，用于CI/CD
+
 ## 下载Android SDK
 
 下载地址：<http://developer.android.com/sdk/index.html>，选择Linux(i386)。因为SDK只有32位的，如果装的是64位系统，则要安装ia32-libs，运行32位程序<br>
@@ -68,10 +70,10 @@ source /etc/profile
 在终端输入：android，如果Android SDK Manager窗口出来了，或者如果安装的命令行版本，则会报SWTError，就证明环境配置成功。
 
 ## 配置AVD
-1、进入$SDK_HOME/toos目录
+1、进入$SDK_HOME/toos目录<br>
 2、命令窗口运行：./android avd
 
-## 备忘命令：
+## 备忘命令
 
 ``` java
 //更新指定版本build-tools

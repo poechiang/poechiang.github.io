@@ -6,6 +6,7 @@ description: 介绍、安装和配置SciTE
 keywords: SciTE, Linux, Centos
 ---
 
+介绍、安装和配置SciTE
 
 ## 简介
 

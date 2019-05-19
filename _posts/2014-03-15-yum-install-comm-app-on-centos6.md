@@ -6,6 +6,7 @@ description: 主要有输入法、Chrome、wine
 keywords:  Linux, Centos
 ---
 
+主要有输入法、Chrome、wine
 
 ## ibus中文输入法的配置
 
