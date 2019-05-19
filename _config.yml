@@ -2,12 +2,12 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://impeter1986.github.io
+url: https://peterlpt.github.io
 date_format: "ordinal"
 title: Peter
 subtitle: "打码改变人生"
 description: "Peter的个人博客"
-keywords: Peter, Peter Liu, impeter, impeter1986
+keywords: Peter, Peter Liu, impeter, impeter1986, peter, peterlpt
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
@@ -18,7 +18,7 @@ side_bar_repo_limit: 5
 author: Peter Liu
 organization: 
 organization_url: 
-github_username: impeter1986
+github_username: peterlpt
 location: Guangdong, China
 email: impeter1986@outlook.com
 
@@ -102,7 +102,7 @@ gitment:
         client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: imPeter1986
+    owner: peterlpt
     repo: blog-comments
     clientID: a7d231a61788527d5489
     clientSecret: 2491b3aeea3aa0dad829e43ca0278a2c7dae6474
