@@ -1,6 +1,7 @@
-# 码志
+# Peter
 
-我的个人博客：<https://mazhuang.org>，欢迎 Star 和 Fork。
+我的个人博客：<https://peterlpt.github.io>，欢迎 Star 和 Fork。
+Fork from <https://mazhuang.org>
 
 ## 概览
 

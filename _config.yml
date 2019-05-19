@@ -2,12 +2,12 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://mazhuang.org
+url: https://impeter1986.github.io
 date_format: "ordinal"
-title: 码志
+title: Peter
 subtitle: "打码改变人生"
-description: "马壮的个人博客"
-keywords: 码志, Zhuang Ma, mzlogin, mazhuang
+description: "Peter的个人博客"
+keywords: Peter, Peter Liu, impeter, impeter1986
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
@@ -15,12 +15,12 @@ side_bar_repo_limit: 5
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Zhuang Ma
+author: Peter Liu
 organization: 
 organization_url: 
-github_username: mzlogin
-location: Wuhan, China
-email: chumpma@gmail.com
+github_username: impeter1986
+location: Guangdong, China
+email: impeter1986@outlook.com
 
 # ---------------- #
 #    Navigation    #
@@ -102,10 +102,10 @@ gitment:
         client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: mzlogin
+    owner: imPeter1986
     repo: blog-comments
-    clientID: d2e1cbbd298958076462
-    clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+    clientID: a7d231a61788527d5489
+    clientSecret: 2491b3aeea3aa0dad829e43ca0278a2c7dae6474
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
