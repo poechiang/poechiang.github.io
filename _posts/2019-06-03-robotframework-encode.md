@@ -90,3 +90,5 @@ def pop(self):
 
 ![修改结果](/images/posts/test/rf_encode.png "testrunner.py修改结果")
 
+改完重启ride生效
+
