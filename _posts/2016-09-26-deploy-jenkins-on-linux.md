@@ -53,7 +53,7 @@ export JENKINS_HOME=/home/ciuser/jenkinsHome
 ### 1) 显示语言调整
 Jenkins没有选项可以调整显示语言，但调整浏览器语言顺序设定可以自动适配。例如在chrome中，下图的语言和输入设置，配置的第一语言即会被jenkins识别为显示语言。
 
-![](/images/posts/linux/jenkins_config_1_language.png)
+![Jenkins显示语言修改](/images/posts/linux/jenkins_config_1_language.png "修改Jenkins显示语言")
 
 ### 2) 系统设置
 在jenkins主页进入系统设置
