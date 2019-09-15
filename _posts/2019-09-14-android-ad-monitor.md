@@ -351,7 +351,7 @@ public static void onAdClick(View view) {
 
 ### 4.7 整体实现SDK类
 
-[Android原生广告曝光点击监测实现SDK源码](/images/AdMonitorManager.java)
+[Android原生广告曝光点击监测实现SDK及本demo源码](https://github.com/peterlpt/AdMonitor.git)
 
 ## 5 方案已知缺陷
 
