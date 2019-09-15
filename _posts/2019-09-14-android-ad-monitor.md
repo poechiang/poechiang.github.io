@@ -132,10 +132,15 @@ private static boolean isViewShow(View view) {
 /**
  * 注册Application级别的全局Activity生命周期订阅事件<br/>
  * <strong>NOTE:</>重复调用只会在第一次调用时注册
+ * @param context ApplicationContext
  */
-private static void regListener() {
+private static void regListener(Context context) {
     if (!isLifecycleListened) {
-        ModuleContext.getExternalApplicationContext().registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
+        checkNotNull(context, "上下文不能为空");
+        if (!(context instanceof MainApplication)) {
+            throw new IllegalArgumentException("上下文必须为ApplicationContext");
+        }
+        ((MainApplication) context).registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
             }
@@ -181,7 +186,6 @@ private static void regListener() {
                 }
             }
         });
-        //标识已注册，以免重复注册
         isLifecycleListened = true;
     }
 }
@@ -297,7 +301,7 @@ private static void addViewTreeObserverListener(final View view) {
  * @param adMonitorAttr 广告监测属性，只有非空才能有效注册
  */
 public static void regAdView(final View view, AdMonitorAttr adMonitorAttr) {
-    if (view == null || adMonitorAttr == null) {
+    if (view == null || view.getContext() == null || adMonitorAttr == null) {
         return;
     }
     AdViews adViewsReged = findView(view);
@@ -318,7 +322,7 @@ public static void regAdView(final View view, AdMonitorAttr adMonitorAttr) {
     adViewsList.add(adView);
 
     //注册所在Activity生命周期监听
-    regListener();
+    regListener(view.getContext().getApplicationContext());
 
     //订阅相关ViewTree事件
     addViewTreeObserverListener(view);
