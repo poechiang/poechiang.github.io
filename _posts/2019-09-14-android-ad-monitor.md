@@ -10,7 +10,7 @@ keywords: Android, 广告, 曝光, 异步监测, 同步监测
 
 ## 1 实现效果概述
 
-![广告监测, 动图大小82.6MB](/images/posts/android/android_ad_monitor.gif "广告监测整体实现效果")
+![广告监测, 动图大小78MB](/images/posts/android/android_ad_monitor.gif "广告监测整体实现效果")
 
 说明：
 
@@ -73,7 +73,7 @@ public boolean isShown() {
 
 3. 关于页面发生跳转导致View所在页面不在栈顶、所在Activity、Fragment等页面生命周期触发，如onResume、onPause、onDestroyed等，我们可以通过注册Application提供的Activity生命周期回调进行监听：[Application#registerActivityLifecycleCallbacks](https://developer.android.com/reference/kotlin/android/app/Application?hl=zh#registerActivityLifecycleCallbacks(android.app.Application.ActivityLifecycleCallbacks))
 
-实现对View显示状态准确、实时监听后，其他能力问题就不大了：
+实现对View显示状态准确、实时监听后，其他功能实现问题就不大了：
 
 * 曝光开始时记录开始时间
 * 曝光结束时生成曝光时长并对配置的广告曝光异步监测进行上报

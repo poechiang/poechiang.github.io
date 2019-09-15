@@ -103,7 +103,7 @@ pip install robotframework-seleniumlibrary
 因为RIDE在输入的只是一个名字而不是路径时，就会到当前启动RIDE所用python的Lib/site-packages目录下寻找同名文件夹导入。
 
 ---
-## 附：可能遇到的问题
+# 附：可能遇到的问题
 ### 1. 'ascii' codec can't encode characters in position 8-50: ordinal not in range(128)
 
 Python在安装时，默认的编码是ascii，当程序中出现非ascii编码时，python的处理常常会报这样的错UnicodeDecodeError: 'ascii' codec can't decode byte 0x?? in position 1: ordinal not in range(128)，python没办法处理非ascii编码，此时需设置将python的默认编码改为目标编码，如utf8<br>
@@ -156,3 +156,9 @@ def pop(self):
 ![修改结果](/images/posts/test/rf_encode.png "testrunner.py修改结果")
 
 改完重启ride生效
+
+### 3. 从数据库中取出中文乱码问题
+
+数据库连接语句中加上charset='utf8'
+
+![image-20190915154642498](/images/posts/test/rf_fix_db_src_encode.png)
