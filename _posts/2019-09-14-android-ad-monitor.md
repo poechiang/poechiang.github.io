@@ -10,7 +10,7 @@ keywords: Android, 广告, 曝光, 异步监测, 同步监测
 
 ## 1 实现效果概述
 
-![广告监测, 动图大小78MB](/images/posts/android/android_ad_monitor.gif "广告监测整体实现效果")
+![广告监测, 动图大小7.7MB](/images/posts/android/android_ad_monitor.gif "广告监测整体实现效果")
 
 说明：
 
@@ -137,7 +137,7 @@ private static boolean isViewShow(View view) {
 private static void regListener(Context context) {
     if (!isLifecycleListened) {
         checkNotNull(context, "上下文不能为空");
-        if (!(context instanceof MainApplication)) {
+        if (!(context instanceof Application)) {
             throw new IllegalArgumentException("上下文必须为ApplicationContext");
         }
         ((MainApplication) context).registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
@@ -367,5 +367,4 @@ public static void onAdClick(View view) {
 
 [1. 一篇文章读懂S2S 与C2S、同步监测与异步监测](https://zhuanlan.zhihu.com/p/67810432)
 
-[2. Android View的可见性检查方法-上篇]([http://unclechen.github.io/2016/10/17/Android%20View的可见性检查方法-上篇/ ](http://unclechen.github.io/2016/10/17/Android View的可见性检查方法-上篇/))
-
+[2. Android View的可见性检查方法-上篇](http://unclechen.github.io/2016/10/17/Android%20View%E7%9A%84%E5%8F%AF%E8%A7%81%E6%80%A7%E6%A3%80%E6%9F%A5%E6%96%B9%E6%B3%95-%E4%B8%8A%E7%AF%87/)
