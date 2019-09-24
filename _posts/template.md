@@ -1,5 +1,5 @@
 ---
-![python安装](/images/posts/test/install_python2.jpg "python安装关于环境变量")layout: post
+layout: post
 title: template page
 categories: [cate1, cate2]
 description: some word here

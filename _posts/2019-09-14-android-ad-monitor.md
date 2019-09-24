@@ -3,7 +3,7 @@ layout: post
 title: Android原生广告曝光点击监测实现
 categories: [Android]
 description: 以对业务实现层最少侵入为原则，在SDK层实现对Android原生广告View的曝光监听、点击监听上报
-keywords: Android, 广告, 曝光, 异步监测, 同步监测
+keywords: Android, 广告监测, 曝光, 异步监测, 同步监测
 ---
 
 以对业务实现层最少侵入为原则，在SDK层实现对Android原生广告View的曝光监听上报、点击监听上报，做到业务层只需调用统一注册方法告知SDK层该View为广告控件，剩余工作由SDK层内部完成。
@@ -115,7 +115,7 @@ private static boolean isViewShow(View view) {
         return false;
     }
 
-    //需求要求计算可见面积，如果小于View面积一并，仍要标记为未展示
+    //需求要求计算可见面积，如果小于View面积一半，仍要标记为未展示
     int area = width * height;
     int displayArea = (r.right - r.left) * (r.bottom - r.top);
     boolean isValidShow = area <= displayArea << 1;
