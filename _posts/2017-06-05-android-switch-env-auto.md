@@ -3,7 +3,7 @@ layout: post
 title: Android环境配置自动切换实现
 categories: [Android]
 description: 将环境配置与对应buildType关联，实现切换环境打包无需调整代码
-keywords: Android, CI, 环境配置, buildTypes, productFlavors
+keywords: Android, CI, 环境配置, buildTypes, productFlavors, Groovy
 ---
 
 将环境配置与对应buildType关联，实现切换环境打包无需调整代码，保证各环境下必要的差异同时最大限度降低误、漏操作导致不应该的配置发布到应用市场。同时也简单整理了build.gradle相关配置，包含buildTypes、productFlavors、matchingFallbacks等。
