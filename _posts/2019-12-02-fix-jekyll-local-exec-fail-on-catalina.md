@@ -82,7 +82,7 @@ $ bundle exec jekyll serve
 Traceback (most recent call last):
 2: from /usr/local/opt/ruby/bin/bundle:23:in `<main>'
 1: from /usr/local/Cellar/ruby/2.6.5/lib/ruby/2.6.0/rubygems.rb:303:in `activate_bin_path'
-/usr/local/Cellar/ruby/2.6.5/lib/ruby/2.6.0/rubygems.rb:284:in `find_spec_for_exe': Could not find 'bundler' (2.0.1) required by your /Users/peter/Data/jekyllPrj/peterlpt.github.io/Gemfile.lock. (Gem::GemNotFoundException)
+/usr/local/Cellar/ruby/2.6.5/lib/ruby/2.6.0/rubygems.rb:284:in `find_spec_for_exe': Could not find 'bundler' (2.0.1) required by your /Users/xxx/Data/jekyllPrj/peterlpt.github.io/Gemfile.lock. (Gem::GemNotFoundException)
 To update to the latest version installed on your system, run `bundle update --bundler`.
 To install the missing version, run `gem install bundler:2.0.1`
 ```
@@ -128,7 +128,7 @@ Use `bundle info [gemname]` to see where a bundled gem is installed.
 
 ```shell
 $ bundle exec jekyll serve
-Configuration file: /Users/peter/Data/jekyllPrj/peterlpt.github.io/_config.yml
+Configuration file: /Users/xxx/Data/jekyllPrj/peterlpt.github.io/_config.yml
        Deprecation: The 'gems' configuration option has been renamed to 'plugins'. Please update your config file accordingly.
             Source: /Users/xxx/Data/jekyllPrj/peterlpt.github.io
        Destination: /Users/xxx/Data/jekyllPrj/peterlpt.github.io/_site
