@@ -113,3 +113,42 @@ $ pod --version
 1.8.4
 ```
 
+### 3. AppBar 不自动显示返回键等leading Widget
+
+* 异常情况
+
+关于Scaffold AppBar的automaticallyImplyLeading参数，默认为true，根据doc注释：
+
+```dart
+  /// Controls whether we should try to imply the leading widget if null.
+  /// If true and [leading] is null, automatically try to deduce what the leading
+  /// widget should be. If false and [leading] is null, leading space is given to [title].
+  /// If leading widget is not null, this parameter has no effect.
+```
+
+automaticallyImplyLeading=true，同时leading Widget未设置，系统应该会自动根据需要显示返回键等leading Widget默认实现。
+
+但有时却不会显示？
+
+* 问题原因
+
+只有Scaffold作为根Widget时，AppBar automaticallyImplyLeading=true，才能根据存在上级路由时自动显示返回键
+
+* 问题解决
+
+两种方式：
+
+1. 将Scaffold作为根Widget
+2. 如果布局需要无法作为根Widget，则显式指定leading Widget，如返回键：
+
+```dart
+Scaffold(
+  appBar: AppBar(
+    //显式指定返回键
+    leading: BackButton(
+      onPressed: () => Navigator.pop<bool>(context, false),
+    ),
+  ),
+))
+```
+
