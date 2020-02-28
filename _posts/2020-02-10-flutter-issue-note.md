@@ -152,3 +152,17 @@ Scaffold(
 ))
 ```
 
+### 4. Waiting for another flutter command to release the startup lock...
+
+* 问题现象
+
+AndroidStudio的时候顶部的模拟器一直是loading状态，即使已经打开了模拟器。运行flutter doctor 提示：
+
+```shell
+$ flutter doctor
+Waiting for another flutter command to release the startup lock...
+```
+
+* 问题解决
+
+从提示中得知，因为有上一条命令未结束而锁定了，如果确认无其他在执行的命令，那可以到Flutter安装目录/bin/cache/，删除lockfile文件，再执行Flutter命令就正常了
