@@ -166,3 +166,22 @@ Waiting for another flutter command to release the startup lock...
 * 问题解决
 
 从提示中得知，因为有上一条命令未结束而锁定了，如果确认无其他在执行的命令，那可以到Flutter安装目录/bin/cache/，删除lockfile文件，再执行Flutter命令就正常了
+
+### 5. asset在debug、profile下可以读取，但到了release就无法读取，报Unable to load asset的问题
+
+背景：flutter的buildtype默认只有debug profile release三个，而我是add-to-app的，而原宿主app是有debug alpha beta release4个buildtype，add-to-app后，就在宿主app上定义了debug profile alpha beta release共5个
+遇到的问题：我在宿主app上debug profile release三个buildtype下asset读取无异常，但flutter module上没有的alpha beta上时就所有asset都无法读取。
+
+Flutter版本信息如下：
+
+```shell
+$ flutter doctor -v
+[✓] Flutter (Channel beta, v1.17.0-3.2.pre, on Mac OS X 10.15.3 19D76, locale
+    zh-Hans-CN)
+    • Flutter version 1.17.0-3.2.pre at /Users/peter/Data/flutter
+    • Framework revision 2a7bc389f2 (11 days ago), 2020-04-21 20:34:20 -0700
+    • Engine revision 4c8c31f591
+    • Dart version 2.8.0 (build 2.8.0-dev.20.10)
+```
+
+暂时未找到有效办法
