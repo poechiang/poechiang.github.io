@@ -260,16 +260,69 @@ $ flutter doctor -v
 
 但是，我们项目肯定不能等待sdk升级才发版
 
+* 方法一：重新设置目标class
+
 其实，也不难发现，使用`NewEngineIntentBuilder#build`出来的`Intent`，最后还是由我们代码的`context.startActivity`进行触发的，那我们在触发前再重新设置一下目标class不就行了？
 
 ```java
-Intent intent = BridgeActivity.withNewEngine().build(MainActivity.this);
+Intent intent = BridgeActivity.withNewEngine().build(context);
 //重新设置一下目标class到子类BridgeActivity.class
-intent.setClass(MainActivity.this, BridgeActivity.class);
-startActivity(intent);
+intent.setClass(context, BridgeActivity.class);
+context.startActivity(intent);
 ```
 
 调整好代码运行，问题果然得到解决。
+
+* 方法二：通过继承调用被`protected`修饰的Constructor
+
+利用`protected`修饰的方法可以被子类访问的特性，通过继承`NewEngineIntentBuilder`调用被`protected`修饰的Constructor：
+
+```java
+public class BridgeActivity extends FlutterActivity {
+    //...
+    //继承`NewEngineIntentBuilder`调用被`protected`修饰的Constructor
+		public static class MyNewEngineIntentBuilder extends NewEngineIntentBuilder {
+        MyNewEngineIntentBuilder(@NonNull Class<? extends FlutterActivity> activityClass) {
+            super(activityClass);
+        }
+    }
+    //接着则可以按提示自行提供withNewEngine()返回用子类构建的`NewEngineIntentBuilder`
+    public static FlutterActivity.NewEngineIntentBuilder withNewEngine() {
+        return new MyNewEngineIntentBuilder(FlutterBridgeActivity.class);
+    }
+  
+    //类似的，如果有使用CachedEngine，也可能继承`CachedEngineIntentBuilder`调用被`protected`修饰的Constructor来返回用子类构建的`CachedEngineIntentBuilder`
+    public static FlutterActivity.CachedEngineIntentBuilder withCachedEngine(@NonNull String cachedEngineId) {
+        return new MyCachedEngineIntentBuilder(FlutterBridgeActivity.class, cachedEngineId);
+    }
+    public static class MyCachedEngineIntentBuilder extends CachedEngineIntentBuilder{
+        protected MyCachedEngineIntentBuilder(@NonNull Class<? extends FlutterActivity> activityClass, @NonNull String engineId) {
+            super(activityClass, engineId);
+        }
+    }
+}
+```
+
+之后就可以按照官方的指导方式进行Flutter页面跳转了：
+
+```java
+//直接跳转，不使用cacheEngine
+Intent intent = BridgeActivity
+            .withNewEngine()
+            .initialRoute("initialRoute")
+            .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
+            .build(context);
+context.startActivity(intent);
+
+//使用cacheEngine跳转
+Intent intent = BridgeActivity
+        .withCachedEngine("your_cache_id")
+        .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
+        .build(context);
+context.startActivity(intent);
+```
+
+
 
 ### 5. 其他
 
