@@ -288,12 +288,12 @@ public class BridgeActivity extends FlutterActivity {
     }
     //接着则可以按提示自行提供withNewEngine()返回用子类构建的`NewEngineIntentBuilder`
     public static FlutterActivity.NewEngineIntentBuilder withNewEngine() {
-        return new MyNewEngineIntentBuilder(FlutterBridgeActivity.class);
+        return new MyNewEngineIntentBuilder(BridgeActivity.class);
     }
   
     //类似的，如果有使用CachedEngine，也可能继承`CachedEngineIntentBuilder`调用被`protected`修饰的Constructor来返回用子类构建的`CachedEngineIntentBuilder`
     public static FlutterActivity.CachedEngineIntentBuilder withCachedEngine(@NonNull String cachedEngineId) {
-        return new MyCachedEngineIntentBuilder(FlutterBridgeActivity.class, cachedEngineId);
+        return new MyCachedEngineIntentBuilder(BridgeActivity.class, cachedEngineId);
     }
     public static class MyCachedEngineIntentBuilder extends CachedEngineIntentBuilder{
         protected MyCachedEngineIntentBuilder(@NonNull Class<? extends FlutterActivity> activityClass, @NonNull String engineId) {
