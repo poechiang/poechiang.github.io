@@ -174,12 +174,12 @@ function upload(){
 	echo "开始上传："
 	echo $1
 	echo $2
-	# mvn上传命令
+	# mvn上传命令，这里由于将上传用户名密码配置于全局maven settings.xml，则无需再指定用户名密码
 	mvn deploy:deploy-file \
 	-DpomFile="$1" \
 	-DgeneratePom=false \
 	-Dfile="$2" \
-	-Durl="http://192.168.1.70:8081/repository/app-snapshot" \
+	-Durl="http://xxx.xxx.xxx.xxx:8081/repository/app-snapshot" \
 	-DrepositoryId="nexus-releases" \
 	-Dpackaging=aar
 }
