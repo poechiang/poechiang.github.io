@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Flutter之遇到的问题记录
-categories: [Flutter]
+categories: [Flutter, Dart]
 description: 记录在Flutter开发中遇到的一系列问题、分析过程及解决方法。
 keywords: Flutter
 

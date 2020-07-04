@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Add-to-app的MethodCallHandler不生效抛MissingPluginException解决
-categories: [Android, Flutter]
+categories: [Android, Flutter, Dart]
 description: 在FlutterActivity子类configureFlutterEngine里，设置的MethodChannel及MethodCallHandler因未触发，导致Flutter通过MethodChannel调用原生平台时一直抛MissingPluginException的问题分析及解决
 keywords: Add-to-app, Flutter, MethodChannel, MethodCallHandler
 ---
