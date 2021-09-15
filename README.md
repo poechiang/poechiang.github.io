@@ -3,6 +3,9 @@
 我的个人博客：<https://peterlpt.github.io>，欢迎 Star 和 Fork。
 Fork from <https://mazhuang.org>
 
+--
+本博客已停止维护，于2021-09-14迁移至：[Peter的个人博客](https://ptlpt.gitee.io)
+
 ## 概览
 
 <!-- vim-markdown-toc GFM -->
