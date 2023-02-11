@@ -205,3 +205,40 @@
     }
   }
 }
+@import "../styles/mixin.less";
+
+.input {
+  color: @color-input-fore;
+  border-width: @input-border-width;
+  outline: none;
+  border-radius: @border-radius-input;
+  border-color: @color-base-border;
+  background-color: @color-input-back;
+  height: @input-height;
+  padding: @input-padding;
+}
+@color-search-icon-fill: @color-icon-fill;
+.search-wrap {
+  display: inline-block;
+  position: relative;
+  height: @input-height;
+  font-size: 0;
+  width: fit-content;
+  height: fit-content;
+  border-radius: @border-radius-input;
+  input[type="search"] {
+    .input();
+    padding-right: 18px;
+    border-radius: inherit;
+  }
+
+  // icon
+  .icon {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -0.5em;
+    font-size: 14px;
+    color: @color-search-icon-fill;
+  }
+}
