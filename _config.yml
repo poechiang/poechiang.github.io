@@ -5,8 +5,8 @@ baseurl:
 url: https://poechiang.github.io
 date_format: "ordinal"
 title: Jeffrey
-subtitle: "只为遇见更好的自己"
-description: "Jeffre的个人博客，本博客已停止维护，于2021-09-14迁移至：[Jeffre的个人博客](https://ptlpt.gitee.io)"
+subtitle: "Everything is inferior but reading\nA millennial coder"
+description: "Jeffrey's Blog"
 keywords: Jeffre, Jeffrey Chiang, impeter, impeter1986, peter, peterlpt
 timezone: Asia/Shanghai
 encoding: "utf-8"
@@ -19,8 +19,8 @@ author: Jeffrey·Chiang
 organization:
 organization_url:
 github_username: poechiang
-location: Guangdong, China
-email: impeter1986@outlook.com
+location: Hangzhou, China
+email: poechiang@live.cn
 
 # ---------------- #
 #    Navigation    #
