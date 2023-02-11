@@ -15,10 +15,10 @@ side_bar_repo_limit: 5
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: Peter Liu
-organization: 
-organization_url: 
-github_username: peterlpt
+author: Jeffrey·Chiang
+organization:
+organization_url:
+github_username: poechiang
 location: Guangdong, China
 email: impeter1986@outlook.com
 
@@ -26,28 +26,23 @@ email: impeter1986@outlook.com
 #    Navigation    #
 # ---------------- #
 navs:
-  -
-    href: /
+  - href: /
     label: 首页
 
-  -
-    href: /categories/
+  - href: /categories/
     label: 分类
 
-#   -
-#     href: /archives/
-#     label: 归档
+  #   -
+  #     href: /archives/
+  #     label: 归档
 
-  -
-    href: /wiki/
+  - href: /wiki/
     label: 维基
 
-  -
-    href: /links/
+  - href: /links/
     label: 链接
 
-  -
-    href: /about/
+  - href: /about/
     label: 关于
 
 # ---------------- #
@@ -60,7 +55,7 @@ subscribe_rss: /feed.xml
 # ---------------- #
 markdown: kramdown
 kramdown:
-    input: GFM
+  input: GFM
 highlighter: rouge
 paginate: 10
 lsi: false
@@ -68,18 +63,18 @@ quiet: false
 excerpt_separator: "\n\n"
 permalink: /:year/:month/:day/:title/
 gems:
-    - jekyll-github-metadata
-    - rouge
-#     - jekyll-html-pipeline
-    - jekyll-paginate
-    - jekyll-sitemap
-    - jekyll-feed
-    - jemoji
+  - jekyll-github-metadata
+  - rouge
+  #     - jekyll-html-pipeline
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jemoji
 #     - jekyll-mentions
 collections:
-    wiki:
-        output: true
-        permalink: /wiki/:path/
+  wiki:
+    output: true
+    permalink: /wiki/:path/
 
 repository: mzlogin/mzlogin.github.io
 
@@ -92,34 +87,34 @@ comments_provider: gitalk
 # !!!Important!!! Please modify infos below to yours
 # https://disqus.com
 disqus:
-    username: 
+  username:
 # https://imsun.net/posts/gitment-introduction/
 gitment:
-    owner: mzlogin
-    repo: blog-comments
-    oauth:
-        client_id: d2e1cbbd298958076462
-        client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+  owner: mzlogin
+  repo: blog-comments
+  oauth:
+    client_id: d2e1cbbd298958076462
+    client_secret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 # https://github.com/gitalk/gitalk#install
 gitalk:
-    owner: peterlpt
-    repo: blog-comments
-    clientID: a7d231a61788527d5489
-    clientSecret: 2491b3aeea3aa0dad829e43ca0278a2c7dae6474
+  owner: peterlpt
+  repo: blog-comments
+  clientID: a7d231a61788527d5489
+  clientSecret: 2491b3aeea3aa0dad829e43ca0278a2c7dae6474
 # 在使用其它评论组件时可点击显示 Disqus
-lazy_load_disqus : false
+lazy_load_disqus: false
 
 # ---------------- #
 #      Search      #
 # ---------------- #
 simple_jekyll_search:
-    # 是否支持全文搜索
-    fulltext: false
-    # 最多显示多少条搜索结果
-    limit: 10
+  # 是否支持全文搜索
+  fulltext: false
+  # 最多显示多少条搜索结果
+  limit: 10
 
 # ---------------- #
 #    Analytics     #
 # ---------------- #
 google:
-    analytics_id: UA-80669434-1
+  analytics_id: UA-80669434-1
