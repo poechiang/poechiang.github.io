@@ -1,4 +1,35 @@
 @import: "./variable.less";
+.page-hd-wrap {
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  h1 {
+    margin: 0;
+    line-height: 24px;
+    font-size: 24px;
+  }
+}
+.author-info {
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  margin-bottom: 2.625rem;
+  .user-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+  .contacts {
+    font-size: 1.2em;
+    color: #9d9d9d;
+    a {
+      color: unset;
+      &:not(:first-child) {
+        margin-left: 4px;
+      }
+    }
+  }
+}
 .light-theme-root {
   --c-switch-back: #f0f0f0;
   --c-switch-graphy-shadow: #0000003c;
