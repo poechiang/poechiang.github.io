@@ -22,7 +22,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 /**
  * 广告控件监测处理类
  *
- * @author Peter 2019-08-23
+ * @author Jeffre 2019-08-23
  */
 public class AdMonitorManager {
 
