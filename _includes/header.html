@@ -14,7 +14,7 @@
       rel="stylesheet"
       href="/src/assets/styles/hightlight/github.dark.less"
     />
-    <link rel="stylesheet" href="/src/assets/themes/polar.less" />
+    <link rel="stylesheet" href="/assets/themes/polar.less" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
@@ -147,6 +147,22 @@
     <script src="{{ site.url }}/assets/js/main.js"></script>
   </head>
   <body class="{{ page.class }}" data-mz="{{ page.class }}">
+    <header class="page-hd-wrap">
+      <h1>Jeffrey · Chiang</h1>
+      <span class="flex-auto"></span>
+      <span class="theme-switch-wrap flexable --line-center sun">
+        <span class="auto-wrap mr-md">
+          <span class="icon timer" title="跟随系统">
+            <svg aria-hidden="true">
+              <use xlink:href="#icon-timer"></use>
+            </svg>
+          </span>
+        </span>
+        <span class="switch-wrap" title="明亮主题,点击切换暗黑主题">
+          <input type="hidden" />
+        </span>
+      </span>
+    </header>
     <header class="site-header">
       <div class="container">
         <h1>

@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+body,
+dl,
+dt,
+dd,
+ul,
+ol,
+li {
+    margin: 0;
+}
+svg symbol path {
+    fill: unset;
+}
+
+::selection,
+::-webkit-selection {
+    background-color: fade(@color-primary, 20%);
+}
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: @color-placeholder;
+    opacity: 0.5; /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: @color-placeholder;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: @color-placeholder;
+}
