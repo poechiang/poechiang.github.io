@@ -1,20 +1,20 @@
-# Jeffre
+# Jeffrey
 
-我的个人博客：<https://peterlpt.github.io>，欢迎 Star 和 Fork。
-Fork from <https://mazhuang.org>
+[![pages-build-deployment](https://github.com/poechiang/poechiang.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/poechiang/poechiang.github.io/actions/workflows/pages/pages-build-deployment)
 
---
-本博客已停止维护，于 2021-09-14 迁移至：[Jeffre 的个人博客](https://ptlpt.gitee.io)
+我的个人博客：<https://poechiang.github.io>，欢迎 Star 和 Fork。
+Fork from <peterlpt/peterlpt.github.io>
 
 ## 概览
 
 <!-- vim-markdown-toc GFM -->
 
-- [效果预览](#效果预览)
-- [Fork 指南](#fork-指南)
-- [贴心提示](#贴心提示)
-- [经验与思考](#经验与思考)
-- [致谢](#致谢)
+- [Jeffrey](#jeffrey)
+  - [概览](#概览)
+  - [效果预览](#效果预览)
+  - [Fork 指南](#fork-指南)
+  - [贴心提示](#贴心提示)
+  - [经验与思考](#经验与思考)
 
 <!-- vim-markdown-toc -->
 
@@ -76,11 +76,3 @@ Fork 本项目之后，还需要做一些事情才能让你的页面「正确」
 - 杜绝难断句、难理解的长句子，如果不能将其拆分成几个简洁的短句，说明脑中的理解并不清晰。
 
 - 可以学习一下那些高质量的博主，他们的行文，内容组织方式，有什么值得借鉴的地方。
-
-## 致谢
-
-本博客外观基于 [DONGChuan](https://dongchuan.github.io) 修改，感谢！
-
-[1]: https://github.com/mzlogin/chinese-copywriting-guidelines
-[2]: https://help.github.com/articles/setting-up-your-pages-site-locally-with-jekyll/
-[3]: https://github.com/mzlogin/mzlogin.github.io/issues/2
