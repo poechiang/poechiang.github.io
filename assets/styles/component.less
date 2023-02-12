@@ -205,18 +205,9 @@
     }
   }
 }
-
-.input {
-  color: @color-input-fore;
-  border-width: @input-border-width;
-  outline: none;
-  border-radius: @border-radius-input;
-  border-color: @color-base-border;
-  background-color: @color-input-back;
-  height: @input-height;
-  padding: @input-padding;
-}
+@import "./minix.less";
 @color-search-icon-fill: @color-icon-fill;
+
 .search-wrap {
   display: inline-block;
   position: relative;
@@ -241,7 +232,12 @@
     color: @color-search-icon-fill;
   }
 }
-
+#search-results {
+  font-size: 14px;
+  list-style-type: none;
+  padding-top: 10px;
+  padding-left: 10px;
+}
 .page-ft-wrap {
   margin-top: 3.7rem;
 }

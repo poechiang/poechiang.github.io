@@ -159,3 +159,11 @@ each(@text-aligns,{
         text-align:@value;
     }
 })
+
+
+@positions:absolute,fixed,inherit,initial,relative,revert,static,sticky,unset;
+each(@positions,{
+    .pos-@{value},{
+        position:@value;
+    }
+})
