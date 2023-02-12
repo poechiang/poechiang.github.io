@@ -235,8 +235,27 @@
 #search-results {
   font-size: 14px;
   list-style-type: none;
-  padding-top: 10px;
-  padding-left: 10px;
+  padding-left: 0;
+  width: 100%;
+  background-color: @color-pop-back;
+  border-radius: 6px;
+  margin-top: 1em;
+  li {
+    border-bottom: 1px solid @color-base-border;
+    background-color: @color-pop-back;
+    padding: 4px 12px;
+  }
+  &:before {
+    content: "";
+    border: 6px solid @color-pop-back;
+    top: -8px;
+    left: calc(50% - 3px);
+    position: absolute;
+    border-top-width: 0;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-width: 8px;
+  }
 }
 .page-ft-wrap {
   margin-top: 3.7rem;
