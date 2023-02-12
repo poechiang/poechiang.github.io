@@ -152,3 +152,10 @@ each(@reservedMargins,{
         padding-top: @value * 1px;
     }
 });
+
+@text-ligns:left,center,right,none,unset,inherit;
+each(@text-aligns,{
+    .ta-@{value}{
+        text-align:@value;
+    }
+})
