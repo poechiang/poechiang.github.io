@@ -15,7 +15,7 @@ layout: default
             {% if page.date %}
             <span class="meta-info">
               <span class="octicon octicon-calendar"></span> {{ page.date |
-              date: "%Y/%m/%d" }} {{ page.date | date: "%MMM %d, %Y" }}
+              date_to_rfc822 }}
             </span>
             {% endif %} {% for cat in page.categories %}
             <span class="meta-info">
