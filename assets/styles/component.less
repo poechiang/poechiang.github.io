@@ -138,6 +138,9 @@
     }
     &.checked {
       background-color: @color-primary!important;
+      icon {
+        color: #ffffff;
+      }
     }
   }
   .switch-wrap {
@@ -168,14 +171,7 @@
     &.disabled {
       box-shadow: none;
       &:before {
-        background: linear-gradient(40deg, #ffffff20, #ffffff49 70%);
-        box-shadow: 0 0 5px #ffffff20;
-      }
-      &.checked:before {
-        background: unset;
-        box-shadow: inset -3px -3px 5px -2px #ffffff20,
-          inset -4px -4px 0px 0px #ffffff49;
-        filter: none;
+        filter: grayscale(1);
       }
     }
   }
