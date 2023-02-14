@@ -13,7 +13,8 @@
         $('.geopattern').each(function(){
           $(this).geopattern($(this).data('pattern-id'));
         });
-       // hljs.initHighlightingOnLoad();
+        
+       hljs.highlightAll()
       });
     </script>
 
@@ -28,7 +29,7 @@
     <script src="{{ site.url }}/assets/js/underscore-min.js"></script>
     <script src="{{ site.url }}/assets/vendor/js-sequence-diagrams/dist/sequence-diagram-min.js"></script>
     <script>
-      $(".language-sequence").sequenceDiagram({theme: 'simple'});
+      // $(".language-sequence").sequenceDiagram({theme: 'simple'});
     </script>
     {% endif %}
 

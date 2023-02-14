@@ -30,15 +30,25 @@ body {
 a {
   text-decoration: none;
   outline: none;
+  .hov-link {
+    &:hover {
+      color: @color-link-hover;
+    }
+    &:active {
+      color: @color-link-active;
+    }
+  }
   &:link,
   &:visited {
     color: @color-link-theme;
   }
-  &:hover {
-    color: @color-link-hover;
-  }
-  &:active {
-    color: @color-link-active;
+  .hov-link();
+  &.plain {
+    &:link,
+    &:visited {
+      color: @color-foreground;
+    }
+    .hov-link();
   }
 }
 .art-list-wrap {

@@ -10,27 +10,22 @@ comments: false
     src="/assets/images/IMG_1862.jpg"
     alt="用户头像"
     class="user-photo mr-8"
-  /><span class="flex-auto"
-    >Everything is inferior but reading<br />
-    A millennial coder</span
-  ><span class="contacts"
-    ><a href="javascript:;" title="Github"
-      ><span class="icon github3"
+  />
+  <span class="flex-auto">
+    Everything is inferior but reading<br />
+    A millennial coder
+  </span>
+  <span class="contacts">
+    {% for link in site.navs %}
+    <a href="{{link.href}}" title="{{link.title}}"
+      ><span class="icon {{link.icon}}"
         ><svg aria-hidden="true">
-          <use xlink:href="#icon-github3"></use></svg></span></a
-    ><a href="javascript:;" title="Instagram"
-      ><span class="icon ins"
-        ><svg aria-hidden="true">
-          <use xlink:href="#icon-ins"></use></svg></span></a
-    ><a href="javascript:;" title="Twitter"
-      ><span class="icon twitter3"
-        ><svg aria-hidden="true">
-          <use xlink:href="#icon-twitter3"></use></svg></span></a
-    ><a href="javascript:;" title="Sina Weibo"
-      ><span class="icon weibo3"
-        ><svg aria-hidden="true">
-          <use xlink:href="#icon-weibo3"></use></svg></span></a
-  ></span>
+          <use xlink:href="#icon-{{link.icon}}"></use>
+        </svg>
+      </span>
+    </a>
+    {% endfor %}
+  </span>
 </aside>
 
 {% include sidebar-search.html %}

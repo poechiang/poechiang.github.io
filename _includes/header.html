@@ -5,6 +5,7 @@
     <link rel="icon" type="image/jpeg" href="/assets/images/user.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jeffrey 's Blog</title>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
     <link
       id="code-theme"
       rel="stylesheet/less"
@@ -95,8 +96,11 @@
       content="{{ page.date | date: '%Y-%m-%d' }}"
     />
     {% endif %}
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="{{ site.url }}/assets/vendor/jquery/dist/jquery.min.js"></script>
-    <script src="{{ site.url }}/assets/js/main.js"></script>
+    <script defer src="{{ site.url }}/assets/js/core.js"></script>
+    <script defer src="{{ site.url }}/assets/js/main.js"></script>
     <script
       defer
       src="//at.alicdn.com/t/c/font_2260524_84khw2zn1fn.js"
@@ -105,7 +109,7 @@
   <body class="{{ page.class }}" data-mz="{{ page.class }}">
     <div id="app">
       <header class="page-hd-wrap flexable --line-center">
-        <h1>Jeffrey · Chiang</h1>
+        <a class="plain" href="{{site.url}}"><h1>Jeffrey · Chiang</h1></a>
         <span class="flex-auto"></span>
         <span class="theme-switch-wrap flexable --line-center sun">
           <span class="auto-wrap mr-md">
