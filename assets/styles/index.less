@@ -171,9 +171,46 @@ a {
     }
   }
 }
-
+.page-bd-wrap {
+  &#qrcode {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
 .page-ft-wrap {
   text-align: center;
   color: #9e9e9e;
   margin-top: 2.6em;
+  .copy {
+    font-size: 0.83em;
+  }
+  .dyh {
+    height: 50px;
+  }
+}
+.dark-theme-root {
+  .page-bd-wrap {
+    &#qrcode img {
+      &.qrcode-light {
+        display: block;
+      }
+      &.qrcode-dark {
+        display: none;
+      }
+    }
+  }
+}
+.light-theme-root {
+  .page-bd-wrap {
+    &#qrcode img {
+      &.qrcode-dark {
+        display: block;
+      }
+      &.qrcode-light {
+        display: none;
+      }
+    }
+  }
 }

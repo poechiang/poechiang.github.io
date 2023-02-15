@@ -5,12 +5,13 @@ baseurl:
 url: https://poechiang.github.io
 date_format: "ordinal"
 title: Jeffrey
-subtitle: "Everything is inferior but reading &lt;br&gt;A millennial coder"
+subtitle: "Everything is inferior but coding!"
 description: "Jeffrey's Blog"
 keywords: Jeffre, Jeffrey Chiang, jeff, jesper, jeffrey, jett
 timezone: Asia/Shanghai
 encoding: "utf-8"
 side_bar_repo_limit: 5
+iconfont: //at.alicdn.com/t/c/font_2260524_h1xhhgc9auf.js
 
 # ---------------- #
 #      Author      #
@@ -38,9 +39,9 @@ navs:
     title: Twitter
     icon: twitter3
 
-  - href: https://weibo.com/poechiang
-    title: Sina Blog
-    icon: weibo3
+  - href: /wechat/qrcode
+    title: WeChat
+    icon: weixin
 
 # ---------------- #
 #       RSS        #
@@ -53,6 +54,8 @@ subscribe_rss: /feed.xml
 markdown: kramdown
 kramdown:
   input: GFM
+  syntax_highlighter_opts:
+    disable: true
 highlighter: rouge
 paginate: 10
 lsi: false

@@ -28,7 +28,7 @@ $(() => {
 
   //**********************************************
   // theme toggler start
-  const { log } = $.withTags("switch");
+  const { log } = $.withTags("theme");
   const $themeSwitchWrap = $(".theme-switch-wrap");
   const $autoWrap = $themeSwitchWrap.find(".auto-wrap");
   const $switchWrap = $themeSwitchWrap.find(".switch-wrap");
@@ -48,8 +48,7 @@ $(() => {
         $root.attr(ATTR_LIGHT, "").removeAttr(ATTR_DARK);
       }
     }
-
-    $codeLink.attr("href", `/assets/styles/hightlight/github.${theme}.less`);
+    $codeLink.attr("href", `/assets/styles/hightlight/github.${theme}.css`);
   };
 
   const checkPrefersColorScheme = (theme) =>
@@ -57,17 +56,18 @@ $(() => {
   const toggleAutoTheme = (isAuto) => {
     const old = $.cache.session(CACHE_THEME_KEY) || {};
     let theme = old.theme;
+    var isDarkMode = checkPrefersColorScheme("dark");
     if (isAuto) {
       $autoWrap.addClass("checked");
       $switchWrap.addClass("disabled");
 
-      updateStyle(true, theme);
+      updateStyle(true, isDarkMode ? "dark" : "light");
       $.cache.session(CACHE_THEME_KEY, {
         theme,
         isAuto,
       });
+      log("toggle to auto");
     } else {
-      var isDarkMode = checkPrefersColorScheme("dark");
       if (isDarkMode) {
         toggleLightTheme();
       } else {
@@ -84,6 +84,8 @@ $(() => {
 
     updateStyle(false, "dark");
     $.cache.session(CACHE_THEME_KEY, { isAuto: false, theme: "dark" });
+
+    log("toggle to dark mode");
   };
 
   const toggleLightTheme = () => {
@@ -94,9 +96,11 @@ $(() => {
 
     updateStyle(false, "light");
     $.cache.session(CACHE_THEME_KEY, { isAuto: false, theme: "light" });
+    log("toggle to light mode");
   };
 
   const old = $.cache.session(CACHE_THEME_KEY) || {};
+
   if (old?.isAuto) {
     toggleAutoTheme(true);
   } else {

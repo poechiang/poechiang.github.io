@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
     <link
       id="code-theme"
-      rel="stylesheet/less"
-      type="text/css"
-      href="/assets/styles/hightlight/github.dark.less"
+      rel="stylesheet"
+      href="/assets/styles/hightlight/github.dark.css"
     />
     <link
       rel="stylesheet/less"
-      type="text/css"
+      type="text/less"
       href="/assets/themes/polar.less"
     />
-    <script src="https://cdn.jsdelivr.net/npm/less"></script>
+    
+    <script  src="https://cdn.jsdelivr.net/npm/less"></script>
+    
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
@@ -103,7 +104,7 @@
     <script defer src="{{ site.url }}/assets/js/main.js"></script>
     <script
       defer
-      src="//at.alicdn.com/t/c/font_2260524_84khw2zn1fn.js"
+      src="{{ site.iconfont }}"
     ></script>
   </head>
   <body class="{{ page.class }}" data-mz="{{ page.class }}">

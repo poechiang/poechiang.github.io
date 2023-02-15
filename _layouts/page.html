@@ -2,30 +2,19 @@
 layout: default
 ---
 
-<section
-  class="collection-head small geopattern"
-  data-pattern-id="{{ page.title | truncate: 15}}"
->
-  <div class="container">
-    <div class="collection-title">
-      <h1 class="collection-header">{{ page.title }}</h1>
-      {% if page.subtitle %}
-      <div class="collection-info">
-        <span class="meta-info"> {{ page.subtitle}} </span>
-      </div>
-      {% endif %}
-    </div>
+<section id="{{ page.id || ''}}" class="container page-bd-wrap">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {% if page.subtitle %}
+  <div class="page-sub-title">
+    <span class=""> {{ page.subtitle}} </span>
   </div>
-</section>
-<!-- / .banner -->
-<section class="container content">
-  <div class="columns">
-    <div class="column two-thirds">
-      <article class="article-content markdown-body">{{ content }}</article>
-      <div class="share">{% include sns-share.html %}</div>
-      <div class="comment">{% include comments.html %}</div>
-    </div>
-    <div class="column one-third">{% include sidebar-qrcode.html %}</div>
-  </div>
+  {% endif %}
+
+  <article class="page-body">{{ content }}</article>
+  {% if !page.snsSare %}
+  <div class="share">{% include sns-share.html %}</div>
+  {% endif %} {% if !pae.comments %}
+  <div class="comment">{% include comments.html %}</div>
+  {% endif %}
 </section>
 <!-- /section.content -->
