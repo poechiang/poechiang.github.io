@@ -53,6 +53,7 @@ $(() => {
 
   const checkPrefersColorScheme = (theme) =>
     window.matchMedia(`(prefers-color-scheme: ${theme})`).matches;
+
   const toggleAutoTheme = (isAuto) => {
     const old = $.cache.session(CACHE_THEME_KEY) || {};
     let theme = old.theme;
@@ -126,6 +127,31 @@ $(() => {
       toggleDarkTheme();
     }
   });
+
+  const observeMediaChange = (mqStr, listener) => {
+    const mqList = window.matchMedia(mqStr);
+
+    mqList.addEventListener("change", listener);
+
+    return () => mqList.removeEventListener("change", listener);
+  };
+
+  $(window).on(
+    "unload",
+    observeMediaChange("(prefers-color-scheme: dark)", (event) => {
+      const old = $.cache.session(CACHE_THEME_KEY) || {};
+      if (!old.isAuto) return;
+      log("(prefers-color-scheme: dark) system changed");
+      // is dark mode
+      if (event.matches) {
+        $switchWrap.removeClass("checked");
+        $.cache.session(CACHE_THEME_KEY, { isAuto: true, theme: "light" });
+      } else {
+        $switchWrap.addClass("checked");
+        $.cache.session(CACHE_THEME_KEY, { isAuto: true, theme: "dark" });
+      }
+    })
+  );
 
   // theme toggler end
   //**********************************************

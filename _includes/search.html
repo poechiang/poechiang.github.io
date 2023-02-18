@@ -1,0 +1,84 @@
+
+<div class="pos-relative search-wrap">
+    <span class="search-inner">
+        <input
+
+        {% if include.id %}
+            id="{{ include.id }}"
+        {% endif %}
+
+            class="searcher"
+            type="search"
+            placeholder="{{ include.placeholder | default: "标题、内容、标签、关键字" }}"
+            value="{{ include.default | default: "" }}"
+        />
+        <span class="icon search">
+            <svg aria-hidden="true"><use xlink:href="#icon-search"></use></svg>
+        </span>
+    </span>
+
+{% unless include.out %}
+    <ul id="search-results" class="search-results-wrap pos-absolute"></ul>
+{% endunless %}
+
+
+</div>
+
+<script src="{{ site.url }}/assets/js/simple-jekyll-search.min.js"></script>
+<script type="text/javascript">
+    $(()=>{
+
+        const json = '{{ site.url }}/assets/{{ include.data | default: "search_data" | append:".json"}}';
+        const resultsContainer = $('#{{ include.out | default: "search-results" }}')[0];
+        const $searcher=$('.search-wrap .search-inner {% if include.id %}{{ include.id | prepend:"#" }}{% endif %}.searcher');
+        console.log(123,json,resultsContainer,$searcher[0]);
+        {%- case include.mode -%}
+        {%- when 'article' -%}
+        const searchResultTemplate = `
+        <div class="art-list-item">
+            <h3 class="art-list-item-title">
+            <a href="{url}">{title}</a>
+            </h3>
+            <small class="repo-list-meta flexable --line-center">
+            <span class="meta-info mr-8"> {date} </span>
+            {categories}
+            <span class="flex-auto"></span>
+            {tags}
+            </small>
+            <p class="desc">{description}</p>
+        </div>`;
+        const templateMiddleware = (prop, value, template) => {
+            console.log(1111,prop,value);
+            if(prop==='categories' && value){
+                const list = value.map((v)=>`<a href="{{ site.url }}/categories/#${v}" title="${v}">${v}</a>`)
+                return `《${list.join('·')}》`;
+            }
+            if(prop === 'tags' && value){
+                return value.map((v)=>`<span class="tag"><a class="plain" href="{{ site.url }}/tags/#${v}" title="${v}">${v}</a></span>`).join('');
+            }
+            else{
+                return value;
+            }
+        };
+        {%- else -%}
+        const searchResultTemplate='<li><a href="{url}" title="{tags}">{title}</a></li>';
+        const templateMiddleware = (prop, value, template) => {return value;};
+        {%- endcase -%}
+
+        SimpleJekyllSearch({
+            searchInput: $searcher[0],
+            resultsContainer,
+            json,
+            searchResultTemplate,
+            noResultsText: `
+            <div class="ta-center">
+                <img src="/assets/images/no-search-rlt.svg" style="width:100px;margin-top:20px">
+                <h3>No results found</h3>
+            </div>`,
+            limit: {{ site.simple_jekyll_search.limit }},
+            fuzzy: false,
+            exclude: ['Welcome'],
+            templateMiddleware
+        })
+    })
+</script>

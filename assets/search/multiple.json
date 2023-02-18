@@ -1,0 +1,43 @@
+---
+---
+{% capture json %}
+[
+  {% for pg in site.pages %}
+  {% if pg.title != nil %}
+    {
+      "search_type": "page",
+      "title"    : "{{ pg.title | escape }}",
+      "url"      : "{{ site.url }}{{ pg.url }}"
+    } ,
+  {% endif %}
+  {% endfor %}
+
+  {% for doc in site.documents %}
+    {
+      "search_type": "article",
+      "title"    : "{{ post.title | escape }}",
+      "categories" : [{% for c in post.categories %}"{{c}}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+      "tags"     : [{% for t in post.keywords %}"{{t}}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+      "description" : "{{ post.description }}",
+      "date"     : "{{ post.date | date: "%b %d, %Y" }}"
+      {% if site.simple_jekyll_search.fulltext %}"content": {{ doc.content | markdownify | strip_html | replace:'"','' | jsonify | replace:'\n',' ' | replace:'   ',' ' | replace:'  ',' ' | replace:'\',' ' }},{% endif %}
+      "url"      : "{{ site.url }}{{ doc.url }}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+
+  {% for post in site.posts %}
+    {
+      "search_type": "post",
+      "title"    : "{{ post.title | escape }}",
+      "categories" : [{% for c in post.categories %}"{{c}}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+      "tags"     : [{% for t in post.keywords %}"{{t}}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+      "description" : "{{ post.description }}",
+      "date"     : "{{ post.date | date: "%b %d, %Y" }}"
+      {% if site.simple_jekyll_search.fulltext %}"content": {{ doc.content | markdownify | strip_html | replace:'"','' | jsonify | replace:'\n',' ' | replace:'   ',' ' | replace:'  ',' ' | replace:'\',' ' }},{% endif %}
+      "url"      : "{{ site.baseurl }}{{ post.url }}",
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+{% endcapture %}
+
+{{ json | lstrip }}
