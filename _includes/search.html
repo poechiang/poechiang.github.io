@@ -28,7 +28,7 @@
 <script type="text/javascript">
     $(()=>{
 
-        const json = '{{ site.url }}/assets/{{ include.data | default: "search_data" | append:".json"}}';
+        const json = '{{ site.url }}/assets/search/{{ include.data | default: "multiple" | append:".json"}}';
         const resultsContainer = $('#{{ include.out | default: "search-results" }}')[0];
         const $searcher=$('.search-wrap .search-inner {% if include.id %}{{ include.id | prepend:"#" }}{% endif %}.searcher');
         console.log(123,json,resultsContainer,$searcher[0]);
@@ -48,16 +48,17 @@
             <p class="desc">{description}</p>
         </div>`;
         const templateMiddleware = (prop, value, template) => {
-            console.log(1111,prop,value);
+            const k = $searcher.val();
+            const mark = (m)=>m.replace(new RegExp(k,'g'),`<mark>${k}</mark>`)
             if(prop==='categories' && value){
-                const list = value.map((v)=>`<a href="{{ site.url }}/categories/#${v}" title="${v}">${v}</a>`)
+                const list = value.map((v)=> `<a href="{{ site.url }}/categories/#${v}" title="${v}">${mark(v)}</a>`)
                 return `《${list.join('·')}》`;
             }
             if(prop === 'tags' && value){
-                return value.map((v)=>`<span class="tag"><a class="plain" href="{{ site.url }}/tags/#${v}" title="${v}">${v}</a></span>`).join('');
+                return value.map((v)=>`<span class="tag"><a class="plain" href="{{ site.url }}/tags/#${v}" title="${v}">${mark(v)}</a></span>`).join('');
             }
             else{
-                return value;
+                return mark(value);
             }
         };
         {%- else -%}

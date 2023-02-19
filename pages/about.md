@@ -2,7 +2,7 @@
 layout: page
 title: About
 description: 打码改变世界
-keywords: Jeffrey Chiang, 刘平涛
+tags: Jeffrey Chiang, 刘平涛
 comments: true
 menu: 关于
 permalink: /about/
@@ -24,7 +24,7 @@ permalink: /about/
 ### {{ category.name }}
 
 <div class="btn-inline">
-{% for keyword in category.keywords %}
+{% for keyword in category.tags %}
 <button class="btn btn-outline" type="button">{{ keyword }}</button>
 {% endfor %}
 </div>

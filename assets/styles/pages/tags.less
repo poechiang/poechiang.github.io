@@ -1,0 +1,31 @@
+@import '../../themes/polar.less';
+#tags.page-wrap{
+    .tag-hd-wrap .tag-hd:before,
+    .tag-bd-wrap .tag-item-hd:before{
+        content: "#";
+        margin-right: 0.5em;
+        color: fade(@color-primary,50%);
+    }
+    .tag-bd-wrap{
+        margin-top:3rem;
+
+        .tag-item-bd{
+            margin-bottom: 3rem;
+        }
+    }
+    .all-tags .tag-list{
+        list-style: none;
+        padding:0;
+        .tag{
+            position: relative;
+            padding:0 0.5em 0 1em;
+            &::before{
+                content:"#";
+                position: absolute;
+                left:0.5em;
+                color: fade(@color-primary,50%);
+
+            }
+        }
+    }
+}

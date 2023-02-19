@@ -3,7 +3,7 @@ id: qrcode
 layout: page
 title: 大龄挨踢民工
 description: 打码改变世界
-keywords: Jeffrey Chiang
+tags: Jeffrey Chiang
 comments: false
 snsSare: false
 menu: 微信
