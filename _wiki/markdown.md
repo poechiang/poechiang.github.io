@@ -1,9 +1,9 @@
 ---
 layout: wiki
 title: Markdown
-categories: Markdown
+categories: [Markdown]
 description: Markdown 常用语法示例。
-keywords: Markdown
+tags: [Markdown]
 mermaid: true
 sequence: true
 flow: true
@@ -23,7 +23,7 @@ mathjax: true
 <https://mazhuang.org>
 ```
 
-[靠谱-ing](https://mazhuang.org)  
+[靠谱-ing](https://mazhuang.org)
 
 <https://mazhuang.org>
 

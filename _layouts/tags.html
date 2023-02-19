@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<section
+  id="tags"
+  class="page-wrap"
+>
+  <header class="tag-hd-wrap">
+    <h1 class="tag-hd">{{ page.title }} </h1>
+  </header>
+
+  {% include search.html %}
+
+  {{ content }}
+
+  <footer >
+    {% include tags-nav.html %}
+  </footer>
+  <script>
+    const filter =(decodeURI( window.location.hash)).replace('#','');
+    if(filter){
+      const $list = $(`.tag-bd-wrap #${filter}.tag-item-bd`);
+      $('h1.tag-hd').html(`${filter} (${$list.data('count')})`);
+      $list.siblings().remove();
+    }
+  </script>
+</section>
+<!-- /section.content -->

@@ -1,0 +1,22 @@
+
+<section class="all-tags">
+<h3>所有标签</h3>
+
+<ul class="tag-list flexable">
+{% assign tags = site.tags %}
+{% for tag in tags %}
+<li class="tag">
+<a href="#{{ tag|first }}">{{ tag | first }} <span class="badge">({{ tag|last|size }})</span></a>
+
+</li>
+{% endfor %}
+</ul>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $("#blog-categories li").css('text-transform','capitalize')
+  });
+
+</script>
+</section>

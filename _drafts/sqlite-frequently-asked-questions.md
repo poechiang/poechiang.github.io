@@ -3,7 +3,7 @@ layout: post
 title: SQLite 二十八问
 categories: SQLite
 description: SQLite 官方 FAQ 翻译
-keywords: SQLite, FAQ
+tags: [SQLite, FAQ]
 ---
 
 从业以来一直在做客户端开发，所以最常用到的数据库是 SQLite，但其实对它的一些概念、使用上的限制等有些模棱两可，并不明确，这天无意间翻到官方 FAQ，发现我疑惑的几个点在里面都能找到答案。网上也有这个 FAQ 的中译版，但是都相对较早，不太完整，于是决定试着将其翻译出来，一是备忘，二是分享给有相同困扰和学习需求的童鞋们。
@@ -13,8 +13,8 @@ keywords: SQLite, FAQ
 **目录**
 
 <!-- vim-markdown-toc GFM -->
-* [如何创建自增字段](#如何创建自增字段)
-* [SQLite 支持哪些数据类型](#sqlite-支持哪些数据类型)
+- [如何创建自增字段](#如何创建自增字段)
+- [SQLite 支持哪些数据类型](#sqlite-支持哪些数据类型)
 
 <!-- vim-markdown-toc -->
 
