@@ -1,0 +1,14 @@
+
+<section class="all-categories">
+  <h3>所有分组</h3>
+
+  <ul class="category-list">
+    {% assign sorted_categories = site.categories | sort %}
+    {% for category in sorted_categories %}
+    <li >
+      <span class="category"><a href="#{{ category | first }}">{{ category | first }}</a></span>
+      <span class="badge">({{ category | last | size }})</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

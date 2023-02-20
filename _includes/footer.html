@@ -4,13 +4,13 @@
         <img class="dyh" src="/assets/images/wx-search.png" alt="it 民工">
         <!-- <a href="javascript:window.scrollTo(0,0)" class="right mobile-visible">TOP</a> -->
     </footer>
-    
+
     <!-- / footer -->
     <script src="{{ site.url }}/assets/vendor/share.js/dist/js/share.min.js"></script>
-    
+
     <script>
       jQuery(document).ready(function($) {
-        
+
         const languages = hljs.listLanguages();
         hljs.safeMode();
         languages.forEach((lang) => {
@@ -19,8 +19,9 @@
 
         hljs.registerAliases('js', { languageName: 'javascript' });
         hljs.registerAliases('bask', { languageName: 'bash' });
-        
+
        hljs.highlightAll()
+       window.onhashchange = ()=>location.reload()
       });
     </script>
 

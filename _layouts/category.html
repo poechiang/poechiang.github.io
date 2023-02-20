@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<article
+  id="categories"
+  class="page-wrap page-bd-wrap"
+>
+  <header class="category-hd-wrap flexable">
+    <h1 class="category-hd">{{ page.title }} </h1>
+    <span class="badge"></span>
+  </header>
+  {% include search.html %}
+
+  {{content}}
+
+  {% include category-nav.html %}
+
+
+  <script>
+    const filter =(decodeURI( window.location.hash)).replace('#','');
+    if(filter){
+      const $list = $(`.category-bd-wrap #${filter}.category-item-bd`);
+      $('h1.category-hd').html(`${filter}`).siblings('.badge').html(`(${$list.data('count')})`);
+      $list.siblings().remove();
+    }
+  </script>
+</article>
+<!-- /section.content -->

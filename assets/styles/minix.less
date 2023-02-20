@@ -8,3 +8,28 @@
   height: @input-height;
   padding: @input-padding;
 }
+
+
+.link{
+  &:link,
+  &:visited {
+    color: @color-link-theme;
+  }
+}
+.hov-link {
+  &:hover {
+    color: @color-link-hover;
+  }
+  &:active {
+    color: @color-link-active;
+  }
+}
+.plain-link {
+  &.plain {
+    &:link,
+    &:visited {
+      color: @color-foreground;
+    }
+    .hov-link();
+  }
+}

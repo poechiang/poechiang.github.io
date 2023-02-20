@@ -1,0 +1,65 @@
+@import './minix.less';
+#gitalk-container .gt-container{
+
+    a{
+        color:@color-primary;
+        .link();
+        .hov-link();
+    }
+    .gt-popup{
+        background-color: @color-pop-back;
+        border:none;
+        border-radius: 6px;
+        top:calc(100% - 10px);
+    }
+
+    .gt-user{
+        .gt-ico svg{
+            fill:@color-foreground;
+        }
+        .is--poping .gt-ico svg{
+            fill:@color-primary;
+        }
+    }
+    .gt-header,.gt-comments{
+
+        .gt-ico .gt-svg svg{
+            fill:@color-primary;
+        }
+    }
+
+    .gt-header{
+        &-comment .gt-header-textarea {
+            .input();
+            padding:6px 12px;
+        }
+        &-controls {
+            &-controls-tip{
+                color:@color-primary;
+            }
+        }
+        .gt-btn{
+
+            border: 1px solid;
+            color: @color-primary;
+            background-color: transparent;
+            &-login{
+                background-color: @color-primary;
+                border: 1px solid @color-primary;
+                color:#ffffff;
+            }
+        }
+    }
+
+    .gt-comments{
+        .gt-comment-content{
+            background-color: transparent;
+            &:hover{
+                box-shadow: none;
+            }
+        }
+        .gt-comment-body{
+            color:#7f7f7f !important;
+        }
+    }
+}

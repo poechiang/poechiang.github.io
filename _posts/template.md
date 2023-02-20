@@ -1,7 +1,7 @@
 ---
 layout: post
 title: template page
-categories: [cate1, cate2]
+category: cate1
 description: some word here
 tags: keyword1, keyword2
 ---

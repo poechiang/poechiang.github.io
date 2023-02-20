@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<section
+<article
   id="tags"
-  class="page-wrap"
+  class="page-wrap page-bd-wrap"
 >
   <header class="tag-hd-wrap">
     <h1 class="tag-hd">{{ page.title }} </h1>
@@ -14,9 +14,8 @@ layout: default
 
   {{ content }}
 
-  <footer >
-    {% include tags-nav.html %}
-  </footer>
+  {% include tags-nav.html %}
+
   <script>
     const filter =(decodeURI( window.location.hash)).replace('#','');
     if(filter){
@@ -25,5 +24,5 @@ layout: default
       $list.siblings().remove();
     }
   </script>
-</section>
+</article>
 <!-- /section.content -->
