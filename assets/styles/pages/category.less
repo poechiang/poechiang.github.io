@@ -1,0 +1,36 @@
+@import '../../themes/polar.less';
+#categories.page-wrap{
+    .category-hd-wrap .category-hd,
+    .category-bd-wrap .category-item-hd,
+    .all-categories .category-list .category{
+        position: relative;
+        padding:0 1.5rem;
+        &:before,
+        &:after{
+            position: absolute;
+            color: fade(@color-primary,50%);
+        }
+        &:before{
+            content:"《";
+            left: 0;
+        }
+
+        &:after{
+            content: "》";
+            right: 0;
+        }
+    }
+    .category-hd+.badge{
+        font-weight: bold;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+    }
+    .category-bd-wrap{
+        margin-top:3rem;
+
+        .category-item-bd{
+            margin-bottom: 3rem;
+        }
+    }
+}

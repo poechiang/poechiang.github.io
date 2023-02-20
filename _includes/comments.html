@@ -1,8 +1,8 @@
 {% if page.comments != false %} {% if site.comments_provider != 'disqus' and
 site.lazy_load_disqus and site.disqus and site.disqus.username %}
-<a href="#" class="show_disqus_comment" onclick="return false;"
-  >Show Disqus Comments</a
->
+<a href="#" class="show_disqus_comment" onclick="return false;">
+  Show Disqus Comments
+</a>
 <div id="disqus_thread"></div>
 <script>
   var disqus_config = function () {
@@ -92,7 +92,7 @@ if site.url contains 'mazhuang.org' %} {% assign load_disqus = true %} {% endif
 </script>
 {% when 'gitalk' %}
 <div id="gitalk-container"></div>
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="/assets/vendor/gitalk-1.7.2/dist/gitalk.min.js"></script>
 <script>
   var gitalk = new Gitalk({
     id: '{{ page.url | truncate: 50, "" }}',

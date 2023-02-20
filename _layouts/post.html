@@ -2,26 +2,24 @@
 layout: default
 ---
 
-<section data-pattern-id="{{ page.title | truncate: 15, ''}}">
+<article class = "page-bd-wrap">
   <header class="art-view-hd">
     <h1 class="art-title">{{ page.title }}</h1>
   </header>
 
   <aside class="art-post-date">
-    {% if page.date %} {{ page.date | date: "%b %d, %Y" }} {% endif %} {% for
-    cat in page.categories %}
-    <span class="meta-info">
-      <span class="octicon octicon-file-directory"></span>
-      <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}"
-        >{{ cat }}</a
-      >
-    </span>
-    {% endfor %}
+    {% if page.date %} {{ page.date | date: "%b %d, %Y" }} {% endif %}
+    {% if page.category %}
+    《<a href="{{ site.url }}/categories/#{{ page.category }}" title="{{ page.category }}"
+        >{{ page.category }}</a
+      >》
+    {% endif %}
   </aside>
 
   <article class="art-view-bd article-content">{{ content }}</article>
-</section>
+</article>
 <!-- / .banner -->
-
-<section class="comment">{% include comments.html %}</section>
+{%- if page.comments != false -%}
+{% include comments.html %}
+{%- endif -%}
 <!-- /section.content -->

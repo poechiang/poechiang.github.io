@@ -31,7 +31,7 @@
         const json = '{{ site.url }}/assets/search/{{ include.data | default: "multiple" | append:".json"}}';
         const resultsContainer = $('#{{ include.out | default: "search-results" }}')[0];
         const $searcher=$('.search-wrap .search-inner {% if include.id %}{{ include.id | prepend:"#" }}{% endif %}.searcher');
-        console.log(123,json,resultsContainer,$searcher[0]);
+
         {%- case include.mode -%}
         {%- when 'article' -%}
         const searchResultTemplate = `
@@ -41,7 +41,7 @@
             </h3>
             <small class="repo-list-meta flexable --line-center">
             <span class="meta-info mr-8"> {date} </span>
-            {categories}
+            {category}
             <span class="flex-auto"></span>
             {tags}
             </small>
@@ -50,9 +50,8 @@
         const templateMiddleware = (prop, value, template) => {
             const k = $searcher.val();
             const mark = (m)=>m.replace(new RegExp(k,'g'),`<mark>${k}</mark>`)
-            if(prop==='categories' && value){
-                const list = value.map((v)=> `<a href="{{ site.url }}/categories/#${v}" title="${v}">${mark(v)}</a>`)
-                return `《${list.join('·')}》`;
+            if(prop==='category' && value){
+                return `《<a href="{{ site.url }}/categories/#${value}" title="${value}">${mark(value)}</a>》`;
             }
             if(prop === 'tags' && value){
                 return value.map((v)=>`<span class="tag"><a class="plain" href="{{ site.url }}/tags/#${v}" title="${v}">${mark(v)}</a></span>`).join('');

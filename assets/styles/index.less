@@ -30,26 +30,9 @@ body {
 a {
   text-decoration: none;
   outline: none;
-  .hov-link {
-    &:hover {
-      color: @color-link-hover;
-    }
-    &:active {
-      color: @color-link-active;
-    }
-  }
-  &:link,
-  &:visited {
-    color: @color-link-theme;
-  }
+  .link();
   .hov-link();
-  &.plain {
-    &:link,
-    &:visited {
-      color: @color-foreground;
-    }
-    .hov-link();
-  }
+  .plain-link()
 }
 .art-list-wrap {
   list-style: none;
@@ -223,3 +206,4 @@ a {
   fill:currentColor;
 }
 @import './pages/index.less';
+@import './gittalk.less';

@@ -1,10 +1,16 @@
 @import '../../themes/polar.less';
 #tags.page-wrap{
-    .tag-hd-wrap .tag-hd:before,
-    .tag-bd-wrap .tag-item-hd:before{
-        content: "#";
-        margin-right: 0.5em;
-        color: fade(@color-primary,50%);
+    .tag-hd-wrap .tag-hd,
+    .tag-bd-wrap .tag-item-hd,
+    .all-tags .tag-list .tag{
+        position: relative;
+        padding-left: 1.5em;
+        &:before{
+            content: "#";
+            position: absolute;
+            left:0.5em;
+            color: fade(@color-primary,50%);
+        }
     }
     .tag-bd-wrap{
         margin-top:3rem;
@@ -17,15 +23,7 @@
         list-style: none;
         padding:0;
         .tag{
-            position: relative;
-            padding:0 0.5em 0 1em;
-            &::before{
-                content:"#";
-                position: absolute;
-                left:0.5em;
-                color: fade(@color-primary,50%);
-
-            }
+            padding-right:0.5em;
         }
     }
 }
