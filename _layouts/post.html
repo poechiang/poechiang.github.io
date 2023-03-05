@@ -15,6 +15,11 @@ layout: default
       >》
     {% endif %}
   </aside>
+  {% if page.description %}
+  <blockquote class="art-post-desc">
+    <p>{{page.description}}</p>
+  </blockquote>
+  {% endif %}
 
   <article class="art-view-bd article-content">{{ content }}</article>
 </article>
