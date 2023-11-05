@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Webpack5下使用@jeffchi/logger报缺少核心依赖问题的解决方案
+title: Webpack5下使用@jeffchi\/logger报缺少核心依赖问题的解决方案
 category: 前端
 description: webpack < 5 used to include polyfills for node.js core modules by default. This is no longer the case. Verify if you need this module and configure a polyfill for it.
 tags: [webpack5, @jeffchi/logger]
