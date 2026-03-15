@@ -14,6 +14,16 @@ tags: [type script, rollup]
 npm init -y
 ```
 
+package.json :
+
+```json
+{
+  ...
+  "type": "module",
+  ...
+}
+```
+
 安装依赖
 
 ```js
